@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/*header*/
+
+
+.topnav {
+  overflow: hidden;
+  /*background-color: #333;*/
+  padding: 1% 0;
+  float: center;
+  text-align: center;
+  width: 90%;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+
+}
+
+
+.topnav a {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 4% ;
+  text-decoration: none;
+  font-size: 100%;
+
+}
+
+.topnav a:hover {
+  background: linear-gradient(to left, #ff7e5f, #feb47b);
+  color: black;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+  float: center;
+
+  /*padding: 20px;*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+  padding: 3rem 1rem 0;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  background: #f4f0f7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: normal;
+  /*color: #689659;*/
+}
+
+h1 {
+  margin: 0 0 4rem;
+  text-align: center;
+  font-size: 1.6em;
+  color: blue;
+}
+
+
+.wrap-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 32%;
+  max-width: 100%;
+  margin: 0 0 4rem;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.25);
+  background-color: #D5BEE8;
+}
+.card .wrap-image {
+  position: relative;
+}
+.card .wrap-image img {
+  width: 100%;
+  height: auto;
+}
+.card .wrap-image svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+}
+.card .wrap-image svg polygon, .card .wrap-image svg path {
+  fill: #D5BEE8;
+  stroke: #D5BEE8; /*violet*/
+}
+.card:nth-child(4) .wrap-image svg path {
+  stroke-width: 3px;
+}
+.card:nth-child(5) .wrap-image svg path {
+  stroke-width: 4px;
+}
+.card:nth-child(6) .wrap-image svg path {
+  stroke-width: 6px;
+}
+.card .contents {
+  padding: 1rem;
+}
+.card .contents h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125em;
+  color: white;
+}
+.card .contents .text {
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+
+@media all and (max-width: 768px) {
+  .card {
+    width: 49%;
+    margin-bottom: 3rem;
+  }
+}
+@media all and (max-width: 480px) {
+  .card {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
+
+
+
+
+/*About Me*/
+
+.about {
+  padding: 15%;
+}
+
+.img_text {
+  display: flex;
+  /*justify-content: space-around;*/
+}
+
+.img_text img {
+    width: 80%;
+    height: 80%;  
+    margin-left: 20%; 
+  }
+
+
+
+
+
+
+
+
+
+
+/*Footer css*/
+
+footer {
+    background-color: #d6a7a7;
+    color: #fff; 
+    padding: 20px 0;
+    text-align: center;
+    width: 100%
+}
+
+.social-link img {
+    width: 30px; 
+    height: auto;
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contact-info, .social-links {
+    flex: 1;
+}
+
+.contact-info ul, .social-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info h3, .social-links h3 {           lllllllllllllllll
+    margin-bottom: 10%;
+}
+
+.contact-info a, .social-links a {
+    color: #fff;
+    text-decoration: blink;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover, .social-links a:hover {
+    color: #aaa;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5%;
+}
