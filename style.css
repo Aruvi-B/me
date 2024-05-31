@@ -53,6 +53,8 @@ body {
   margin: 0;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  /*align-items: center;*/
   background: #f4f0f7;
 }
 
@@ -127,26 +129,38 @@ h1 {
 }
 
 
- 
-.box {
-  display: grid;
-  justify-content: space-evenly;
-  align-items: center;
-
-  grid-template-columns: 33% 33% 33%; 
-  gap: 10px;
-  padding: 10px;
-}
-
-.box > div {
-  background-color: #D5BEE8;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 80%;
+  gap: 20px; /* Adds space between each flex item */
+  align-items: center; /* Align items vertically in the center */
+  justify-content: center; /* Align items horizontally in the center */
+  padding: 20px; /* Adds padding inside the container */
   text-align: center;
-  padding: 20px 0;
-  text-ali
-  font-size: 30px;
+  width: 80%;
+  border-radius: 10px; /* Optional: add rounded corners to the container */
 }
 
+.flex-item {
+  background-color: #D5BEE8;
+  padding: 20px; /* Adds padding inside each item */
+  flex: 1;
+  border-radius: 10px; /* Optional: add rounded corners to each item */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow to each item */
+}
 
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+.flex-container a {
+  text-decoration: none;
+  color: black;
+}
 
 @media all and (max-width: 768px) {
   .card {
