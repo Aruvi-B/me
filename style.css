@@ -1,34 +1,92 @@
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700");
-*, *::before, *::after {
-  box-sizing: border-box;
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+   
+    background-color: #f0f0f0;
+    color: #333;
 }
 
+h1, h3 {
+    color: #333;
+}
 
-/*header*/
+/* Project Links Styles */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
 
+.flex-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.flex-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+/* Hover effect for the entire item */
+.flex-item:hover {
+    background-color: #8aff90; 
+    color: white;
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.flex-item a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.flex-item:hover a {
+    color: inherit; /* Maintain the white color */
+}
+
+/* Navigation Styles */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  margin: 2%;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
   padding: 1.5% 0;
-  float: center;
   text-align: center;
   width: 95%;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 
 .topnav a {
-  float: center;
   color: #f2f2f2;
-  text-align: center;
-  padding: 4% ;
+  padding: 14px 20px;
   text-decoration: none;
-  font-size: 100%;
-  width: 20%;
-}
-
+  font-size: 16px;
+  display: inline-block;
+  transition: background 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+} 
 .topnav a:hover {
   background: linear-gradient(to left, #ff7e5f, #feb47b);
   color: darkgreen;
@@ -38,188 +96,89 @@
 .topnav a.active {
   background-color: black;
   color: white;
-  float: center;
-
-  /*padding: 20px;*/
-
+  font-weight: bold;
+}
+/* About Section Styles */
+.img_text {
+    padding: 10%;
+    font-size: 120%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
-
-body {
-  font-family: "Libre Baskerville", serif;
-  font-size: 16px;
-  padding: 3rem 1rem 0;
-  display: flex;
-  margin: 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /*align-items: center;*/
-  background: #f4f0f7;
+.img_text h1 {
+    font-size: 36px;
+    font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  font-weight: normal;
-  /*color: #689659;*/
-}
-
-h1 {
-  margin: 0 0 4rem;
-  text-align: center;
-  font-size: 1.6em;
-  color: blue;
-}
-
-
+/* Projects Section Styles */
 .wrap-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 .card {
-  width: 32%;
-  max-width: 100%;
-  margin: 0 0 4rem;
-  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.25);
-  background-color: #D5BEE8;
-}
-.card .wrap-image {
-  position: relative;
-}
-.card .wrap-image img {
-  width: 100%;
-  height: auto;
-}
-.card .wrap-image svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-}
-.card .wrap-image svg polygon, .card .wrap-image svg path {
-  fill: #D5BEE8;
-  stroke: #D5BEE8; /*violet*/
-}
-.card:nth-child(4) .wrap-image svg path {
-  stroke-width: 3px;
-}
-.card:nth-child(5) .wrap-image svg path {
-  stroke-width: 4px;
-}
-.card:nth-child(6) .wrap-image svg path {
-  stroke-width: 6px;
-}
-.card .contents {
-  padding: 1rem;
-}
-.card .contents h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.125em;
-  color: white;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    overflow: hidden;
+    width: 431px;  /*My 10 th mark ☺️*/
+    position: relative;
 }
 
-
-.card .contents .text {
-  color: rgba(0, 0, 0, 0.5);
-  line-height: 1.6;
-  font-size: 0.9em;
+.wrap-image {
+    position: relative;
+    overflow: hidden;
 }
 
-
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  font-size: 80%;
-  gap: 20px; /* Adds space between each flex item */
-  align-items: center; /* Align items vertically in the center */
-  justify-content: center; /* Align items horizontally in the center */
-  padding: 20px; /* Adds padding inside the container */
-  text-align: center;
-  width: 80%;
-  border-radius: 10px; /* Optional: add rounded corners to the container */
-}
-
-.flex-item {
-  background-color: #D5BEE8;
-  padding: 20px; /* Adds padding inside each item */
-  flex: 1;
-  border-radius: 10px; /* Optional: add rounded corners to each item */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow to each item */
-}
-
-/* Responsive layout - makes a one column-layout instead of two-column layout */
-@media (max-width: 800px) {
-  .flex-container {
-    flex-direction: column;
-  }
-}
-
-.flex-container a {
-  text-decoration: none;
-  color: black;
-}
-
-@media all and (max-width: 768px) {
-  .card {
-    width: 49%;
-    margin-bottom: 3rem;
-  }
-}
-@media all and (max-width: 480px) {
-  .card {
+.wrap-image img {
     width: 100%;
-    margin-bottom: 3rem;
-  }
+    height: auto;
 }
 
 
 
-
-/*About Me*/
-
-.about {
-  padding: 15%;
+.contents {
+    padding: 20px;
+    text-align: center;
 }
 
-.img_text {
-  display: flex;
-  /*justify-content: space-around;*/
+.contents h3 {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.img_text img {
-    width: 80%;
-    height: 60%;  
-    margin-left: 20%; 
-  }
-
-
-/*Skills*/
-.horizontal-list {
-    /*list-style-type: none;  Remove default list styles */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Use flexbox to layout items horizontally */
-}
-.horizontal-list li {
-    margin-right: 10px; /* Add some space between items */
+.contents .text {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
 }
 
+/* Footer Styles */
+footer {
+    background-color: lightblue;
+    margin: 1%;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
 
-
-
-
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+   
 /*Footer css*/
 
-footer {
-    background-color: #d6a7a7;
-    color: #fff; 
-    padding: 20px 0;
-    text-align: center;
-    width: 100%
-}
 
 .social-link img {
     width: 30px; 
@@ -227,11 +186,6 @@ footer {
 }
 
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-}
 
 .contact-info, .social-links {
     flex: 1;
