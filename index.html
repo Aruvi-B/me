@@ -5,13 +5,13 @@
     <meta author="Aruvi B" content="About Me">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aruvi B | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cssnew.css">
     <link rel="icon" type="image/jpeg" sizes="32x32" href="Aruvi_B.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
 </head>
 <body>
   
-<div class="topnav">
+<div class="topnav" style="text-align: center;">
   <a href="index.html">Home</a>
   <a href="#about">About</a>
   <a href="#project">Project</a>
@@ -19,76 +19,45 @@
   <a href="https://drive.google.com/file/d/1gJzkiT9jOlqFRjG0dng3YeF6FOI9aqH-/view?usp=drive_link" target="_blank">Resume</a>
 </div>
 
-<div class="img_text" style="padding: 10%; font-size: 120%">
-  <div style="text-align: center;">
-    <h1 id="about"><b>About Me</b></h1>     
-    <p style="font-size: 20px">Hey Guys, This is Aruvi. I'm an enthusiastic person , who is interested and volunteering to explore it. I'm  final year student of Automobile Engineering at Kongu Engineering College. I have worked in various areas such as Battery Thermal Management Systems, Mobile App Development, Web Development, Kaggle - Expert level</p>      
+<div class="img_text">
+  <h1 id="about"><b>About Me</b></h1>
+  <div class="content">
+    <div class="image">
+      <img src="Aruvi_B.jpg" alt="Aruvi's Image">
+    </div>
+    <div class="box">
+      <div class="text">
+        <p>Hey Guys, This is Aruvi. I'm an enthusiastic person, interested in exploring various fields. Currently, I'm a final year student of Automobile Engineering at Kongu Engineering College. I have hands-on experience in Battery Thermal Management Systems, Mobile App Development, Web Development, and I'm an expert in Kaggle competitions.</p>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<style>
-  .education-status {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.education-status h1 {
-  text-align: center;
-  color: #333;
-}
-
-.education-item {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.education-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.education-item h3 {
-  text-align: center;
-  color: #333;
-}
-
-.education-item p {
-  margin: 5px 0;
-  color: #666;
-}
-
-    html {
-  scroll-behavior: smooth;
-}
-
-</style>
-
 <div class="education-status">
-  <h1>Education</h1>
+  <h2>Educational Background</h2>
   <div class="education-item">
     <h3>BACHELOR'S DEGREE</h3>
     <p>Kongu Engineering College</p>
     <p>Major: Automobile Engineering</p>  
-    <p><b>CGPA: 8.35</b>up to the 5<sup>th</sup>semester</p>
+    <p><b>CGPA: 8.35</b> up to the 5<sup>th</sup> semester</p>
     <p>Expected Graduation Year: 2025</p>
   </div>
   <div class="education-item">
     <h3>HIGHER SECONDARY EDUCATION</h3>
-    <p>Sengunthar Matric Higher Secondary School</p>
-    <p>Major: HSC</p>
-    <p>Percentage: 88.88%</p>
-
-
+    <p><b>Group: Biology + Mathematics</b></p>
+    <ul>
+      <li><p>SSLC Percentage: 86.2%</p></li>
+      <li><p>HSC Percentage: 88.88%</p></li>
+    </ul>
+  </div>
+  <div class="education-item">
+    <h3>Academic Extra Credit Courses</h3>
+    <ul>
+      <li><p>Matlab Fundamentals</p></li>  
+    </ul>
   </div>
 </div>
-
 
 <h1 style="text-align: center;"><b>Projects Links</b></h1>
 
@@ -135,19 +104,16 @@
   </div>
 </div>
 
-
-
-
 <h1 style="text-align: center;" id="project"><b>Projects & Honours</b></h1>
 <div class="wrap-cards">
   <div class="card">
-    <div class="wrap-image"><img src="VIT WINNERS.jpg" alt="VIT pictures"/>
-    </div>
+   <div class="wrap-image"><img src="VIT WINNERS.jpg" alt="VIT pictures"/></div>
     <div class="contents">
       <h3><b>Team BTMS</b></h3>
       <div class="text">Won a First Prize in STARTUP CONCLAVE in VIT Chennai.</div>
     </div>
   </div>
+
 
   <div class="card">
     <div class="wrap-image"><img src="best.png" alt="BSY2021 pictures"/>
@@ -215,7 +181,33 @@
 
   </div>
 
+<div class="volunteer-container">
+    <section class="volunteer-section">
+        <h2 style="text-align: center;">Volunteer Experience</h2>
+        <div class="volunteer-item">
+            <h3>Class Representative, Automobile Department</h3>
+            <p>2021 - 2023</p>
+        </div>
+        <div class="volunteer-item">
+            <h3>Student Placement Co-Coordinator, Department of Automobile Engineering</h3>
+            <p>2022 - Present</p>
+        </div>
+        <div class="volunteer-item">
+            <h3>Joint Secretary, Coding Club of Automobile, Kongu Engineering College</h3>
+            <p>2022 - Present</p>
+        </div>
+        <div class="volunteer-item">
+            <h3>Technical Head, Automobile Engineering Association (AEA)</h3>
+            <a href="https://automobileengineeringassociation.mydurable.com/">Click here</a>
+            <p>2023 - Present</p>
+        </div>
+    </section>
+</div>
 
+<div>
+  <p></p>
+
+</div>
 
 <div class="internship-section">
   <h1>Internship Experience</h1>
@@ -224,8 +216,9 @@
     <a href="https://www.1stop.ai/" style="font-size: 120%; text-decoration: none; color: black;">1stop</a>
     
     <p>Duration: Feb 2023 - May 2023</p>
-    <p>I gained valuable experience in the web development course.<a href="https://www.1stop.ai/verify-qrcode/wdt6JDnHry">view certificate</a></p>
+    <p>I gained valuable experience in the web development course. <a href="https://www.1stop.ai/verify-qrcode/wdt6JDnHry">view certificate</a></p>
   </div>
+
 <!--   <div class="internship-item">
     <h3>Data Science Intern</h3>
     <p>Company: XYZ Analytics</p>
@@ -233,33 +226,11 @@
     <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non mi et libero sodales bibendum vitae nec leo.</p>
   </div>
 </div> -->
-<style>
-.internship-section {
-  text-align: center;
-}
-
-.internship-item {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.internship-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-
-</style>
 
 </body>
 
 
-
-<!-- footer -->
+<!-- Footer -->
 <footer id="contact">
     <div class="footer-container">
         <div class="contact-info">
@@ -270,57 +241,43 @@
                 <li><a href="tel:9363376947">+91 93633 76947</a></li>
             </ul>
         </div>
-
-
         <div>
-          <h3>Connect with Me</h3>
-          <!-- Twitter -->
- <!--          <a href="https://twitter.com/Flat_Studio" target="_blank" class="social-link w-inline-block" previewlistener="true">
-            <img src="x_icon.png" alt="Twitter">
-          </a> -->
-          <div class="social-icons-wrapper">
-            
-
-            <div>
-              <!-- Linkedin -->
-              <a href="https://linkedin.com/in/aruvib" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                  <img src="linkedin.png" alt="LinkedIn" title="LinkedIn">
-              </a>
+            <h3>Connect with Me</h3>
+            <div class="social-icons-wrapper">
+                <div>
+                    <a href="https://linkedin.com/in/aruvib" target="_blank" class="social-link w-inline-block" previewlistener="true">
+                        <img src="linkedin.png" alt="LinkedIn" title="LinkedIn">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://autonomousandai.blogspot.com/2024/03/autonomous-vehicle-blog-aruvi-b.html" target="_blank" class="social-link w-inline-block" previewlistener="true">
+                        <img src="blog_icon.png" alt="Blog" title="Blog">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://github.com/Aruvi-B" target="_blank" class="social-link w-inline-block" previewlistener="true">
+                        <img src="github-icon.png" alt="GitHub" title="Github">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.kaggle.com/aruvib" target="_blank" class="social-link w-inline-block" previewlistener="true">
+                        <img src="kaggle_logo.png" alt="Kaggle" title="Kaggle">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/aruvi.fb/" target="_blank" class="social-link w-inline-block" previewlistener="true">
+                        <img src="facebook_icon.png" alt="Facebook" title="Facebook">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/__aruvi__4/" target="_blank" class="social-link w-inline-block" previewlistener="true">
+                        <img src="instagram_icon.png" alt="Instagram" title="Instagram">
+                    </a>
+                </div>
             </div>
-
-            <div>
-              <!-- Blog -->
-              <a href="https://autonomousandai.blogspot.com/2024/03/autonomous-vehicle-blog-aruvi-b.html" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                  <img src="blog_icon.png" alt="Blog" title="Blog">
-              </a>
-            </div>
-
-            <div>
-              <!-- Github -->
-              <a href="https://github.com/Aruvi-B" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                  <img src="github-icon.png" alt="GitHub" title="Github">
-              </a>
-            </div>
-
-            <div>
-            <!-- Facebook -->
-              <a href="https://www.facebook.com/aruvi.fb/" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                <img src="facebook_icon.png" alt="Facebook" title="Facebook">
-              </a>
-            </div>
-
-            <div>
-              <!-- Instagram -->
-              <a href="https://www.instagram.com/__aruvi__4/" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                  <img src="instagram_icon.png" alt="Instagram" title="Instagram">
-              </a>
-            </div>
-          </div>
-    </div>
-    
+        </div>
     </div>
 </footer>
-
 
 </html>
 
