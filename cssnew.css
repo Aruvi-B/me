@@ -309,12 +309,12 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px; /* Added margin between sections */
+    margin-bottom: 30px; 
 }
 
 .internship-section {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f4f4f9;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
@@ -360,6 +360,7 @@ h2 {
 .footer-container {
     max-width: 90%;
     margin: 0 auto;
+    text-align: center;
     padding: 20px;
     background-color: #f4f4f9;
     border-radius: 8px;
@@ -377,7 +378,7 @@ h2 {
     margin-bottom: 20px; /* Added margin between sections */
 }
 
-.contact-info h3, .social-icons-wrapper h3 {
+.contact-info h4, .social-icons-wrapper h3 {
     margin-top: 0;
     font-size: 24px;
     font-weight: bold;
