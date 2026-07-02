@@ -1,381 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta author="Aruvi B" content="About Me">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aruvi B | Portfolio</title>
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="Aruvi_B.jpg">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="cssnew.css">
-   
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aruvi B | SDV Engineer & Automotive Innovator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0A0F1E;
+    --navy-mid: #111827;
+    --navy-card: #141C2F;
+    --cyan: #00D4FF;
+    --cyan-dim: rgba(0, 212, 255, 0.12);
+    --white: #F0F4FF;
+    --slate: #8892A4;
+    --amber: #FFB347;
+    --green: #34D399;
+    --border: rgba(0, 212, 255, 0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 2.5rem;
+    background: rgba(10, 15, 30, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 1.25rem;
+    color: var(--cyan);
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--slate); font-size: 0.875rem;
+    font-weight: 500; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--cyan); color: var(--navy); font-weight: 600;
+    font-size: 0.8rem; padding: 0.45rem 1.1rem; border-radius: 6px;
+    text-decoration: none; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 2.5rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(0, 212, 255, 0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255, 179, 71, 0.05) 0%, transparent 60%);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em;
+    color: var(--cyan); text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .hero-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 700; line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--white);
+  }
+  .hero-name span { color: var(--cyan); }
+  .hero-tagline {
+    margin-top: 1rem;
+    font-size: 1.15rem; color: var(--slate);
+    min-height: 1.8rem;
+  }
+  .tag-cycle { color: var(--white); font-weight: 500; }
+  .hero-bio {
+    margin-top: 1.5rem; font-size: 1rem;
+    color: var(--slate); max-width: 480px; line-height: 1.75;
+  }
+  .hero-bio strong { color: var(--white); font-weight: 600; }
+  .hero-actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--cyan); color: var(--navy);
+    font-weight: 700; font-size: 0.9rem;
+    padding: 0.75rem 1.75rem; border-radius: 8px;
+    text-decoration: none; transition: transform 0.2s, opacity 0.2s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-outline {
+    border: 1.5px solid var(--border); color: var(--white);
+    font-weight: 600; font-size: 0.9rem;
+    padding: 0.75rem 1.75rem; border-radius: 8px;
+    text-decoration: none; transition: border-color 0.2s, background 0.2s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-outline:hover { border-color: var(--cyan); background: var(--cyan-dim); }
+
+  .hero-photo-wrap {
+    display: flex; justify-content: center;
+    position: relative;
+  }
+  .hero-photo {
+    width: 280px; height: 280px; object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    box-shadow: 0 0 60px rgba(0, 212, 255, 0.15);
+    position: relative; z-index: 1;
+  }
+  .hero-photo-ring {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px; height: 310px;
+    border-radius: 50%;
+    border: 1px dashed rgba(0, 212, 255, 0.25);
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .hero-stats {
+    margin-top: 2.5rem;
+    display: flex; gap: 2rem;
+  }
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem; font-weight: 700; color: var(--cyan);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--slate); margin-top: 0.2rem; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2.5rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+    color: var(--cyan); text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .section-sub { color: var(--slate); font-size: 1rem; max-width: 560px; margin-bottom: 3rem; }
+
+  /* SKILLS */
+  #skills { background: var(--navy-mid); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .skill-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .skill-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+  .skill-tag {
+    font-size: 0.72rem; padding: 0.2rem 0.6rem;
+    background: var(--cyan-dim); color: var(--cyan);
+    border-radius: 4px; font-weight: 500;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .project-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+  .project-emoji { font-size: 1.5rem; }
+  .project-link {
+    color: var(--slate); font-size: 0.85rem; text-decoration: none;
+    display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s;
+  }
+  .project-link:hover { color: var(--cyan); }
+  .project-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;
+  }
+  .project-card p { font-size: 0.875rem; color: var(--slate); flex: 1; line-height: 1.6; }
+  .project-techs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+  .project-tech {
+    font-size: 0.7rem; padding: 0.2rem 0.55rem;
+    background: rgba(255,179,71,0.1); color: var(--amber);
+    border-radius: 4px; font-weight: 500;
+  }
+
+  /* AWARDS */
+  #awards { background: var(--navy-mid); }
+  .awards-list { display: flex; flex-direction: column; gap: 1rem; }
+  .award-item {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 10px 10px 0;
+    padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 1.25rem;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .award-item:hover { transform: translateX(4px); }
+  .award-medal { font-size: 1.5rem; flex-shrink: 0; }
+  .award-body h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem;
+  }
+  .award-body p { font-size: 0.82rem; color: var(--slate); }
+  .award-badge {
+    margin-left: auto; flex-shrink: 0;
+    font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.65rem;
+    border-radius: 20px; white-space: nowrap;
+  }
+  .badge-gold { background: rgba(255,179,71,0.15); color: var(--amber); }
+  .badge-silver { background: rgba(148,163,184,0.15); color: #94A3B8; }
+
+  /* EXPERIENCE */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding-bottom: 2.5rem; position: relative; }
+  .timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 159px; top: 1.5rem;
+    width: 1px; bottom: 0;
+    background: var(--border);
+  }
+  .timeline-left { text-align: right; padding-top: 0.1rem; }
+  .timeline-date { font-size: 0.78rem; color: var(--slate); font-weight: 500; }
+  .timeline-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--cyan); border: 2px solid var(--navy);
+    box-shadow: 0 0 0 2px var(--cyan);
+    position: absolute; left: 155px; top: 0.3rem;
+  }
+  .timeline-card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+  }
+  .timeline-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem; }
+  .timeline-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem; font-weight: 600;
+  }
+  .timeline-card .role { font-size: 0.85rem; color: var(--cyan); font-weight: 500; margin-bottom: 0.75rem; }
+  .timeline-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .timeline-card li { font-size: 0.875rem; color: var(--slate); padding-left: 1.1rem; position: relative; line-height: 1.6; }
+  .timeline-card li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); font-size: 0.75rem; top: 0.05rem; }
+  .timeline-card li strong { color: var(--white); }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .edu-card {
+    background: var(--navy-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+  }
+  .edu-card .degree {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;
+  }
+  .edu-card .school { color: var(--cyan); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .edu-card .detail { color: var(--slate); font-size: 0.82rem; }
+  .edu-card .grade {
+    margin-top: 0.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem; font-weight: 700; color: var(--green);
+  }
+
+  /* CONTACT */
+  #contact { background: var(--navy-mid); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none; color: var(--slate);
+    font-size: 0.9rem; transition: color 0.2s;
+    padding: 0.75rem 1rem;
+    background: var(--navy-card); border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .contact-link:hover { color: var(--white); border-color: var(--cyan); }
+  .contact-icon { font-size: 1.1rem; }
+  .socials { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+  .social-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.6rem 1.1rem; border-radius: 8px;
+    text-decoration: none; font-size: 0.8rem; font-weight: 600;
+    border: 1px solid var(--border); color: var(--slate);
+    transition: all 0.2s;
+  }
+  .social-btn:hover { border-color: var(--cyan); color: var(--white); background: var(--cyan-dim); }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem;
+    color: var(--slate); font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    #hero { padding: 6rem 1.25rem 3rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+    .hero-photo-wrap { order: -1; }
+    .hero-bio { margin: 1.5rem auto 0; }
+    .hero-actions { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    section { padding: 3.5rem 1.25rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; padding-bottom: 2rem; }
+    .timeline-item::after { display: none; }
+    .timeline-left { text-align: left; }
+    .timeline-dot { display: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
 </head>
 <body>
 
-<div class="topnav" style="text-align: center;">
-    <a href="index.html">Home</a>
-    <a href="#about">About</a>
-    <a href="#project">Project</a>
-    <a href="#contact">Contact</a>
-    <a href="https://drive.google.com/file/d/19ny6vvudZyDt9fisJZpcI8LTEvWEOc7W/view?usp=sharing" target="_blank">Resume</a>
-</div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Aruvi B</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://drive.google.com/file/d/19ny6vvudZyDt9fisJZpcI8LTEvWEOc7W/view?usp=sharing" target="_blank" class="nav-cta">Resume ↗</a>
+</nav>
 
-<div class="img_text">
-    <h1 id="about"><b>About Me</b></h1>
-    <div class="content">
-        <div class="image">
-            <img src="Aruvi_B.jpg" alt="Aruvi's Image">
-        </div>
-        <div class="box">
-            <div class="text">
-                <p>Dynamic and enthusiastic Automobile Engineering with hands-on experience in Software-Defined Vehicles (SDVs), Embedded Systems, Battery Management Systems, and Web/Mobile App  Testing. Passionate about the next generation automotive innovation with strong foundation in Embedded IoT, Embedded AI, Coupling with AWS cloud resources (AWS IoT Core, AWS Greengrass, S3) and AUTOSAR Expertise.Proven track record in hackathons and project development, with multiple awards and certifications in cutting-edge automotive and cloud technologies.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="education-status">
-    <h2>Educational Background</h2>
-    <div class="education-item">
-        <h3>BACHELOR'S DEGREE</h3>
-        <p>Kongu Engineering College</p>
-        <p>Major: Automobile Engineering</p>
-        <p>CGPA: 8.24 - FIRST CLASS</p>
-        <p>Graduation Year: 2025</p>
-    </div>
-    <div class="education-item">
-        <h3>HIGHER SECONDARY EDUCATION</h3>
-        <p><b>Group: Biology + Mathematics</b></p>
-        <ul>
-            <li><p>SSLC Percentage: 86.2%</p></li>
-            <li><p>HSC Percentage: 87.87%</p></li>
-        </ul>
-    </div>
-    <div class="education-item">
-        <h3>Academic Extra Credit Courses</h3>
-        <ul>
-            <li><p>Matlab Fundamentals</p></li>
-            <li><p>Manufacturing Guidelines For Product Design</p></li>
-        </ul>
-    </div>
-</div>
-
-<h1 style="text-align: center;"><b>🔗See my Works</b></h1>
-
-<div class="flex-container">
-    <div class="flex-item">
-        <a href="https://github.com/Aruvi-B/Battery-Thermal-Management-System/releases/tag/BTMS" target="_blank">
-            <h3><b>BTMS</b></h3>
-        </a>
-    </div>
-
-    <div class="flex-item">
-        <a href="https://github.com/Aruvi-B/Cranky" target="_blank">
-            <h3><b>Cranky</b></h3>
-        </a>
-    </div>
-
-    <div class="flex-item">
-        <a href="https://github.com/Aruvi-B/Machine-Learning/" target="_blank">
-            <h3><b>Machine Learning</b></h3>
-        </a>
-    </div>
-
-    <div class="flex-item">
-        <a href="https://www.linkedin.com/posts/aruvib_matlabmilestone-certificategenerator-activity-7144035889877311488-zXnj?utm_source=share&utm_medium=member_desktop" target="_blank">
-            <h3><b>MATLAB - Certificate Generator</b></h3>
-        </a>
-    </div>
-    <div class="flex-item">
-        <a href="https://github.com/Aruvi-B/Careway" target="_blank">
-            <h3><b>Careway</b></h3>
-        </a>
-    </div>
-
-    <div class="flex-item">
-        <a href="https://github.com/Aruvi-B/Nshare" target="_blank">
-            <h3><b>Nshare</b></h3>
-        </a>
-    </div>
-
-    <div class="flex-item">
-        <a href="https://github.com/Aruvi-B/Catia-Design" target="_blank">
-            <h3><b>Catia CAD Models</b></h3>
-        </a>
-    </div>
-
-    <div class="flex-item">
-        <a href="https://github.com/Aruvi-B/Vibrating-Blind-Stick" target="_blank">
-            <h3><b>Mini Project - Blind Stick</b></h3>
-        </a>
-    </div>
-
-    <div class="flex-item">
-        <a href="https://aruvi-b.github.io/Intern_Project/" target="_blank">
-            <h3><b>To do List</b></h3>
-        </a>
-    </div>
-</div>
-
-<h1 style="text-align: center;" id="project"><b>Projects & Honours</b></h1>
-<div class="wrap-cards">
-    <div class="card">
-        <div class="wrap-image"><img src="Vit.png" alt="VIT pictures"/></div>
-        <div class="contents">
-            <h3><b>Team BTMS</b></h3>
-            <div class="text">Won a First Prize in STARTUP CONCLAVE in VIT Chennai.</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="wrap-image"><img src="best.png" alt="BSY2021 pictures"/>
-        </div>
-        <div class="contents">
-            <h3><b>Best Student of the Year 2021 - 2022</b></h3>
-            <div class="text">Awarded Best Student of the Year 2021 - 2022 in Automobile Engineering at Kongu Engineering College.</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="wrap-image"><img src="cycle.jpg" alt="Cycle Award"/>
-        </div>
-        <div class="contents">
-            <h3><b>Team Cranky</b></h3>
-            <div class="text">Dynamic Performance Award in SAEINDIA Bicycle Design Challenge - 2023 | PSNA college - Dindigul</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="wrap-image"><img src="BSY1.png" alt="BSY2021 pictures"/>
-        </div>
-        <div class="contents">
-            <h3><b>Best Student of the Year 2023 - 2024</b></h3>
-            <div class="text">Awarded Best Student of the Year in Co-curricular Activities 2023 - 2024 in Automobile Engineering at Kongu Engineering College.</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="wrap-image"><img src="photocit.png" alt="CIT pictures"/>
-        </div>
-        <div class="contents">
-            <h3>Team CareWay</h3>
-            <div class="text">Second Prize in Chennai College of Technology (CIT)</div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="wrap-image"><img src="Group image.jpg" alt="SIH pictures"/>
-        </div>
-        <div class="contents">
-            <h3><b>Team BTMS</b></h3>
-            <div class="text">Secured 2nd place in Smart India Hackathon - Kongu Engineering College</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="wrap-image"><img src="sona price photo.jpg" alt="Sona College Prize"/>
-        </div>
-        <div class="contents">
-            <h3><b>Team CareWay</b></h3>
-            <div class="text">First Prize - Mass2k22 - Sona College of Technology</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="wrap-image"><img src="BIT.png" alt="BIT pictures"/>
-        </div>
-        <div class="contents">
-            <h3><b>Team Careway</b></h3>
-            <div class="text">Secured Runner-Up (2nd place) at Bannari Amman Institute of Technology.</div>
-        </div>
-    </div>
-</div>
-
-<section>
-    <div class="volunteer-container" style="background-color: white;">
-        <section class="volunteer-section">
-            <h1 style="text-align: center;">Volunteer Experience</h1>
-            <div class="volunteer-item">
-                <h3>Class Representative, Automobile Department</h3>
-                <p>2021 - 2023</p>
-            </div>
-            <div class="volunteer-item">
-                <h3>Student Placement Co-Coordinator, Department of Automobile Engineering</h3>
-                <p>2022 - Present</p>
-            </div>
-            <div class="volunteer-item">
-                <h3>Joint Secretary, Coding Club of Automobile, Kongu Engineering College</h3>
-                <p>2022 - Present</p>
-            </div>
-            <div class="volunteer-item">
-                <h3>Technical Head, Automobile Engineering Association (AEA)</h3>
-                <a href="https://automobileengineeringassociation.mydurable.com/">View website</a>
-                <p>2023 - Present</p>
-            </div>
-        </section>
-    </div>
-</section>
-
-<!-- Enhanced Experience Section -->
-<div class="experience-wrapper">
-    <div class="section-header">
-        <h3>Experience</h3>
-    </div>
-
-    <div class="timeline">
-        <!-- CreamCollar - SDV Consultant -->
-        <div class="experience-card">
-            <div class="timeline-dot"></div>
-            <div class="card-content">
-                <div class="company-header">
-                    <img src="creamcollar-logo.svg" alt="CreamCollar Logo" class="company-logo">
-                    <div class="company-info">
-                        <h3>CreamCollar</h3>
-                        <a href="https://www.creamcollar.com/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-
-                <h4 class="position">Junior SDV Consultant</h4>
-                <span class="duration">June 2025 – Present</span>
-
-                <ul class="responsibilities">
-                    <li>Developing, testing, and debugging embedded applications in <strong>C, C++, and Rust</strong> for automotive microcontrollers and embedded Linux systems, with focus on modular and reusable design</li>
-                    <li>Implementing algorithms for <strong>sensor data processing, sensor fusion, and environment perception</strong> under expert supervision</li>
-                    <li>Designing and integrating communication protocols such as <strong>CAN, LIN, SPI, I2C, and Ethernet</strong>, along with diagnostic stacks including <strong>UDS, ISO-TP, and OBD-II</strong></li>
-                    <li>Gaining hands-on expertise in tools and frameworks like <strong>Vector CANoe/CANalyzer, ROS2, SOME/IP, and AUTOSAR (Classic & Adaptive)</strong> for SDV development and validation</li>
-                    <li>Assisting with <strong>cloud-based telemetry solutions</strong> using AWS IoT Core, Azure IoT Hub, and Bosch IoT Suite via MQTT/HTTPS, and contributing to <strong>OTA workflows</strong> with platforms such as Mender and Greengrass</li>
-                    <li>Supporting <strong>consulting projects</strong> by preparing technical research reports, specifications, test plans, and validation documentation</li>
-                    <li>Ensuring compliance with industry standards including <strong>ISO 26262 (Functional Safety)</strong>, <strong>ASPICE (Software Process)</strong>, and <strong>ISO/SAE 21434 (Cybersecurity)</strong></li>
-                    <li>Staying updated with next-gen SDV concepts like <strong>zonal architectures, containerized services, and service-oriented communications</strong>, while collaborating with cross-functional teams and driving continuous learning</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- CreamCollar - Intern -->
-        <div class="experience-card">
-            <div class="timeline-dot"></div>
-            <div class="card-content">
-                <div class="company-header">
-                    <img src="creamcollar-logo.svg" alt="CreamCollar Logo" class="company-logo">
-                    <div class="company-info">
-                        <h3>CreamCollar</h3>
-                        <a href="https://www.creamcollar.com/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-
-                <h4 class="position">Software Engineer Intern</h4>
-                <span class="duration">Oct 2024 – June 2025</span>
-
-                <ul class="responsibilities">
-                    <li>Researched and evaluated <strong>30+ SDV tools</strong> for simulation, prototyping, and embedded systems education</li>
-                    <li>Conducted usability, cost, and integration analysis of platforms like <strong>MATLAB, CARLA, and QEMU</strong></li>
-                    <li>Built comparison matrices and provided <strong>strategic insights</strong> to optimize tool selection and adoption</li>
-                    <li>Collaborated with teams to ensure seamless integration into automotive workflows</li>
-                    <li>Explored <strong>edge computing solutions</strong> for enabling real-time data handling and decision-making</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 1stop - Web Development -->
-        <div class="experience-card">
-            <div class="timeline-dot"></div>
-            <div class="card-content">
-                <div class="company-header">
-                    <img src="logo 1stop.jpg" alt="1stop Logo" class="company-logo">
-                    <div class="company-info">
-                        <h3>1stop</h3>
-                        <a href="https://www.1stop.ai/" target="_blank">Visit Website</a>
-                    </div>
-                </div>
-
-                <h4 class="position">Web Development Intern</h4>
-                <span class="duration">Feb 2023 – May 2023</span>
-
-                <ul class="responsibilities">
-                    <li>Acquired hands-on experience in <strong>full-stack web development</strong> through structured training and projects</li>
-                    <li>Built and deployed responsive web pages, gaining proficiency in <strong>HTML, CSS, JavaScript, and frameworks</strong></li>
-                    <li>Strengthened foundational software engineering skills including version control, debugging, and UI/UX principles</li>
-                </ul>
-
-                <a href="https://www.1stop.ai/verify-qrcode/wdt6JDnHry" target="_blank" class="certificate-link">View Certificate</a>
-            </div>
-        </div>
-
-        <!-- JCB - Service Trainee -->
-        <div class="experience-card">
-            <div class="timeline-dot"></div>
-            <div class="card-content">
-                <div class="company-header">
-                    <img src="JCB-Logo.jpg" alt="JCB Logo" class="company-logo">
-                    <div class="company-info">
-                        <h3>Suryabala Earth Movers JCB</h3>
-                    </div>
-                </div>
-
-                <h4 class="position">Service Trainee</h4>
-                <span class="duration">4 July 2023 - 8 July 2023</span>
-
-                <ul class="responsibilities">
-                    <li>Gained practical experience in JCB industry operations and maintenance</li>
-                    <li>Developed important skills such as <strong>problem-solving, teamwork, and communication</strong></li>
-                    <li>Hands-on training with heavy machinery service protocols</li>
-                </ul>
-
-                <a href="https://github.com/Aruvi-B/Inplant-Training" target="_blank" class="certificate-link">See works</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer id="contact">
-    <div class="footer-container">
-        <div class="contact-info">
-            <h3 style="text-align: center;">Contact Me</h3>
-            <ul>
-                <li><a href="mailto:aruvibalamurugan@gmail.com">aruvibalamurugan@gmail.com</a></li>
-                <li><a href="mailto:aruvib.21auto@kongu.edu">aruvib.21auto@kongu.edu</a></li>
-                <li><a href="tel:9363376947">+91 93633 76947</a></li>
-            </ul>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">Software-Defined Vehicle Engineer</div>
+      <h1 class="hero-name">Aruvi <span>B</span></h1>
+      <p class="hero-tagline">
+        <span class="tag-cycle" id="tagCycle">Research &amp; Enginner SDV - CoE</span>
+      </p>
+      <p class="hero-bio">
+        Automobile Engineer turned <strong>SDV & Embedded Systems Domains</strong>, working at the intersection of automotive hardware, cloud connectivity, and intelligent software. Building the future of connected vehicles — from <strong>SOME/IP protocols</strong> to <strong>AWS IoT</strong> to <strong>AUTOSAR</strong> stacks.
+      </p>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Hackathon Awards</div>
         </div>
         <div>
-            <h3>Connect with Me</h3>
-            <div class="social-icons-wrapper">
-                <div>
-                    <a href="https://linkedin.com/in/aruvib" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                        <img src="linkedin.png" alt="LinkedIn" title="LinkedIn">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://autonomousinai.blogspot.com/2024/08/aruviautonomous.blog.html" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                        <img src="blog_icon.png" alt="Blog" title="Blog">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://github.com/Aruvi-B" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                        <img src="github-icon.png" alt="GitHub" title="Github">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.kaggle.com/aruvib" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                        <img src="kaggle_logo.png" alt="Kaggle" title="Kaggle">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.facebook.com/aruvi.fb/" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                        <img src="facebook_icon.png" alt="Facebook" title="Facebook">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.instagram.com/__aruvi__4/" target="_blank" class="social-link w-inline-block" previewlistener="true">
-                        <img src="instagram_icon.png" alt="Instagram" title="Instagram">
-                    </a>
-                </div>
-            </div>
+          <div class="stat-num">8.24</div>
+          <div class="stat-label">CGPA (First Class)</div>
         </div>
+        <div>
+          <div class="stat-num">1.5+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View My Work ↓</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
     </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-ring"></div>
+      <img src="https://aruvi-b.github.io/me/Aruvi_B.jpg" alt="Aruvi B" class="hero-photo"/>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">Automobile Engineer meets Software Developer</h2>
+    <p class="section-sub">I bridge the physical and digital worlds of automotive engineering — turning hardware expertise into intelligent, cloud-connected vehicle systems.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;">
+      <div class="skill-card">
+        <div class="skill-icon">🎓</div>
+        <h3>Education</h3>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.6;">B.E. Automobile Engineering, Kongu Engineering College · CGPA 8.24 (First Class) · 2025</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💼</div>
+        <h3>Currently</h3>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.6;">Research Enginner SDV - CoE at <strong style="color:var(--white)">CreamCollar</strong> — developing embedded automotive applications in C.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏆</div>
+        <h3>Recognition</h3>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.6;">2× Best Student of the Year · Multiple national hackathon wins · Smart India Hackathon finalist.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>Interests</h3>
+        <p style="font-size:0.875rem;color:var(--slate);line-height:1.6;">Software-Defined Vehicles · Embedded AI · IoT Cloud (AWS) · AUTOSAR · Sensor Fusion · Autonomous Systems</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">What I Bring to the Table</h2>
+    <p class="section-sub">From low-level firmware to cloud telemetry — I explored across the full SDV stack.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <h3>Embedded Systems</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Firmware development for automotive microcontrollers, sensor data processing, and embedded Linux.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">C / C++</span>
+          <!-- <span class="skill-tag">Rust</span> -->
+          <span class="skill-tag">RTOS</span>
+          <span class="skill-tag">IoT</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🚗</div>
+        <h3>Automotive Protocols</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Design and integration of vehicle communication buses and diagnostic stacks.</p>
+        <div class="skill-tags">
+          <!-- <span class="skill-tag">CAN</span> -->
+          <!-- <span class="skill-tag">LIN</span> -->
+          <span class="skill-tag">SOME/IP</span>
+          <!-- <span class="skill-tag">UDS</span> -->
+          <!-- <span class="skill-tag">OBD-II</span> -->
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏗️</div>
+        <h3>AUTOSAR & SDV Frameworks</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Working with Classic and Adaptive AUTOSAR, ROS2, SOME/IP, and zonal architectures.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">AUTOSAR Classic</span>
+          <!-- <span class="skill-tag">Adaptive</span> -->
+          <!-- <span class="skill-tag">ROS2</span> -->
+          <span class="skill-tag">SOME/IP</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">☁️</div>
+        <h3>Cloud & Connectivity</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Cloud-based telemetry, OTA update workflows, and edge computing for real-time vehicle data.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS IoT Core</span>
+          <!-- <span class="skill-tag">Greengrass</span> -->
+          <!-- <span class="skill-tag">Azure IoT</span> -->
+          <span class="skill-tag">MQTT</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔬</div>
+        <h3>Tools & Simulation</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Evaluation, simulation, and validation tooling across 30+ SDV platforms.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Vector CANoe</span>
+          <span class="skill-tag">CANalyzer</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">CARLA</span>
+          <span class="skill-tag">QEMU</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🛡️</div>
+        <h3>Safety & Standards</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Ensuring development compliance with functional safety, cybersecurity, and process standards.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">ISO 26262</span>
+          <span class="skill-tag">ISO/SAE 21434</span>
+          <span class="skill-tag">ASPICE</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Full-stack web development and mobile app testing; responsive UI and real-world deployment experience.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML / CSS</span>
+          <!-- <span class="skill-tag">JavaScript</span> -->
+          <span class="skill-tag">App Testing</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📐</div>
+        <h3>Mechanical & CAD</h3>
+        <p style="font-size:0.82rem;color:var(--slate);line-height:1.6;">Vehicle design, CAD modeling, and hands-on hardware understanding from an automotive engineering foundation.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">CATIA</span>
+          <span class="skill-tag">Battery Systems</span>
+          <span class="skill-tag">Bicycle Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Things I've Built</h2>
+    <p class="section-sub">Real-world prototypes, award-winning systems, and open-source tools across automotive, IoT, and software.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-emoji">🔋</div>
+          <a href="https://github.com/Aruvi-B/Battery-Thermal-Management-System/releases/tag/BTMS" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+        <h3>BTMS — Battery Thermal Management System</h3>
+        <p>Smart thermal management for EV batteries. Monitors cell temperatures, triggers cooling strategies, and prevents thermal runaway — built for real-world safety-critical conditions.</p>
+        <div class="project-techs">
+          <span class="project-tech">Embedded C</span>
+          <span class="project-tech">IoT Sensors</span>
+          <span class="project-tech">Thermal Control</span>
+          <span class="project-tech">EV</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-emoji">🚲</div>
+          <a href="https://github.com/Aruvi-B/Cranky" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+        <h3>Cranky — Award-Winning Bicycle Design</h3>
+        <p>Innovative bicycle design that won the Dynamic Performance Award at SAEINDIA Bicycle Design Challenge 2023. Focused on structural efficiency and performance engineering.</p>
+        <div class="project-techs">
+          <span class="project-tech">CAD</span>
+          <span class="project-tech">CATIA</span>
+          <span class="project-tech">Structural Analysis</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-emoji">🏥</div>
+          <a href="https://github.com/Aruvi-B/Careway" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+        <h3>CareWay — Smart Healthcare Navigation</h3>
+        <p>Multi-award winning app that helps patients navigate to the right hospital department efficiently. Won First Prize at Sona College of Technology and reached finals at multiple national events.</p>
+        <div class="project-techs">
+          <span class="project-tech">App Dev</span>
+          <span class="project-tech">Navigation</span>
+          <span class="project-tech">Healthcare</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-emoji">🤖</div>
+          <a href="https://github.com/Aruvi-B/Machine-Learning/" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+        <h3>Machine Learning Projects</h3>
+        <p>A collection of applied ML models and experiments across classification, regression, and data analysis — connecting automotive sensor data with intelligent decision-making.</p>
+        <div class="project-techs">
+          <span class="project-tech">Python</span>
+          <span class="project-tech">scikit-learn</span>
+          <span class="project-tech">Data Analysis</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-emoji">🦯</div>
+          <a href="https://github.com/Aruvi-B/Vibrating-Blind-Stick" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+        <h3>Vibrating Blind Stick</h3>
+        <p>Assistive technology for visually impaired users — an IoT-powered stick that uses ultrasonic sensors to detect obstacles and provides haptic feedback alerts.</p>
+        <div class="project-techs">
+          <span class="project-tech">Arduino</span>
+          <span class="project-tech">Ultrasonic Sensors</span>
+          <span class="project-tech">Embedded</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-emoji">📤</div>
+          <a href="https://github.com/Aruvi-B/Nshare" target="_blank" class="project-link">GitHub ↗</a>
+        </div>
+        <h3>Nshare — File Sharing App</h3>
+        <p>Lightweight local network file sharing solution enabling quick device-to-device transfers without internet connectivity — practical and privacy-first.</p>
+        <div class="project-techs">
+          <span class="project-tech">Python</span>
+          <span class="project-tech">Networking</span>
+          <span class="project-tech">Local Transfer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-label">Achievements</div>
+    <h2 class="section-title">Awards & Recognition</h2>
+    <p class="section-sub">Competing nationally and winning across automotive innovation, software, and engineering challenges.</p>
+    <div class="awards-list">
+      <div class="award-item">
+        <div class="award-medal">🥇</div>
+        <div class="award-body">
+          <h4>First Prize — STARTUP CONCLAVE, VIT Chennai</h4>
+          <p>Team BTMS · Battery Thermal Management System</p>
+        </div>
+        <div class="award-badge badge-gold">1st Place</div>
+      </div>
+      <div class="award-item">
+        <div class="award-medal">🥇</div>
+        <div class="award-body">
+          <h4>First Prize — Mass2k22, Sona College of Technology</h4>
+          <p>Team CareWay · Smart Healthcare Navigation App</p>
+        </div>
+        <div class="award-badge badge-gold">1st Place</div>
+      </div>
+      <div class="award-item">
+        <div class="award-medal">🏆</div>
+        <div class="award-body">
+          <h4>Best Student of the Year 2021–2022</h4>
+          <p>Co-curricular Activities · Automobile Engineering, Kongu Engineering College</p>
+        </div>
+        <div class="award-medal">🏆</div>
+        <div class="award-body">
+          <h4>Best Student of the Year 2023–2024</h4>
+          <p>Co-curricular Activities · Automobile Engineering, Kongu Engineering College</p>
+        </div>
+        <div class="award-medal">🏆</div>
+        <div class="award-body">
+          <h4>Best Student of the Year 2024–2025</h4>
+          <p>Co-curricular Activities · Automobile Engineering, Kongu Engineering College</p>
+        </div>
+        <div class="award-badge badge-gold">Departmental Award</div>
+      </div>
+      <!-- <div class="award-item">
+        <div class="award-medal">🏆</div>
+        <div class="award-body">
+          <h4>Best Student of the Year 2021–2022</h4>
+          <p>Automobile Engineering · Kongu Engineering College</p>
+        </div>
+        <div class="award-badge badge-gold">Departmental Award</div>
+      </div> -->
+      <div class="award-item">
+        <div class="award-medal">⚡</div>
+        <div class="award-body">
+          <h4>Dynamic Performance Award — SAEINDIA Bicycle Design Challenge 2023</h4>
+          <p>Team Cranky · PSNA College, Dindigul</p>
+        </div>
+        <div class="award-badge badge-gold">Special Award</div>
+      </div>
+      <div class="award-item">
+        <div class="award-medal">🥈</div>
+        <div class="award-body">
+          <h4>2nd Place — Smart India Hackathon (Internal Round)</h4>
+          <p>Team BTMS · Kongu Engineering College</p>
+        </div>
+        <div class="award-badge badge-silver">2nd Place</div>
+      </div>
+      <div class="award-item">
+        <div class="award-medal">🥈</div>
+        <div class="award-body">
+          <h4>Runner-Up — Chennai College of Technology (CIT)</h4>
+          <p>Team CareWay</p>
+        </div>
+        <div class="award-badge badge-silver">2nd Place</div>
+      </div>
+      <div class="award-item">
+        <div class="award-medal">🥈</div>
+        <div class="award-body">
+          <h4>Runner-Up — Bannari Amman Institute of Technology</h4>
+          <p>Team CareWay</p>
+        </div>
+        <div class="award-badge badge-silver">2nd Place</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">Work History</h2>
+    <p class="section-sub">From embedded automotive consulting to web development — a career built on learning fast and shipping real work.</p>
+    <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-date">Jan 2026 – Present &nbsp;&nbsp;</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h3>CreamCollar</h3>
+          </div>
+          <div class="role">Research Enginner SDV - CoE</div>
+          <ul>
+            <li><strong>Agent-based SDV research</strong> — domain trends, use cases, and engineering approaches</li>
+            <li><strong>Open-source tooling</strong> — accelerators for SDV development and learning</li>
+            <li><strong>SDV & AI PoC development</strong> — hands-on builds supporting ER&D teams</li>
+            <li><strong>Ontology & architecture</strong> — validating AI-powered SDV planning frameworks</li>
+            <li><strong>Workshops & conferences</strong> — upskilling industry teams and sharing innovations</li>
+            <li><strong>Delivery ownership</strong> — client and cross-team commitments on quality and timelines</li>
+          </ul>
+        </div>
+      </div>
+      
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-date">Jun 2025 – Dec 2025 &nbsp;&nbsp;</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h3>CreamCollar</h3>
+          </div>
+          <div class="role">Junior SDV Consultant</div>
+          <ul>
+            <li>Developing and debugging embedded apps in <strong>C</strong> for automotive microcontrollers and embedded Linux</li>
+            <li>Implementing <strong>sensor fusion algorithms</strong> for environment perception under expert supervision</li>
+            <!-- <li>Designing and integrating <strong>CAN, LIN, SPI, I2C, Ethernet</strong> with UDS/ISO-TP/OBD-II diagnostic stacks</li> -->
+            <li>Hands-on with <strong>SOME/IP, AUTOSAR Classic</strong>.</li>
+            <li>Contributing to <strong>OTA workflows</strong> via MQTT via, Greengrass; cloud telemetry over AWS IoT Core</li>
+            <li>Ensuring compliance with <strong>ISO 26262, ASPICE, and ISO/SAE 21434</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-date">Oct 2024 – Jun 2025 &nbsp;&nbsp;</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h3>CreamCollar</h3>
+          </div>
+          <div class="role">Software Engineer Intern</div>
+          <ul>
+            <li>Researched and evaluated <strong>30+ SDV tools</strong> for simulation, prototyping, and embedded education</li>
+            <li>Conducted usability, cost, and integration analysis of <strong>MATLAB, CARLA, QEMU</strong></li>
+            <li>Built comparison matrices with <strong>strategic insights</strong> to optimize tool selection</li>
+            <li>Explored <strong>edge computing solutions</strong> for real-time automotive data handling</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-date">Feb 2023 – May 2023 &nbsp;&nbsp;</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h3>1stop.ai</h3>
+          </div>
+          <div class="role">Web Development Intern</div>
+          <ul>
+            <li>Built and deployed <strong>responsive web pages</strong> using HTML, CSS, JavaScript, and frameworks</li>
+            <li>Gained proficiency in <strong>version control, debugging, and UI/UX principles</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-date">Jul 2023 &nbsp;&nbsp;</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h3>Suryabala Earth Movers JCB</h3>
+          </div>
+          <div class="role">Service Trainee</div>
+          <ul>
+            <li>Gained practical experience in <strong>JCB operations, maintenance, and service protocols</strong></li>
+            <li>Developed hands-on skills in <strong>problem-solving and heavy machinery</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="background:var(--navy-mid)">
+  <div class="section-inner">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">Academic Background</h2>
+    <p class="section-sub">A strong engineering foundation combining automotive fundamentals with hands-on technical breadth.</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="degree">B.E. Automobile Engineering</div>
+        <div class="school">Kongu Engineering College</div>
+        <div class="detail">Graduated 2025</div>
+        <div class="grade">8.24 CGPA</div>
+        <div class="detail" style="margin-top:0.25rem">First Class · Coursed in MATLAB, Manufacturing Design</div>
+      </div>
+      <div class="edu-card">
+        <div class="degree">Higher Secondary Education</div>
+        <div class="school">Biology + Mathematics Group</div>
+        <div class="grade">87.87%</div>
+        <div class="detail" style="margin-top:0.25rem">HSC · SSLC: 86.2%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-sub">Open to SDV consulting opportunities, embedded systems roles, research collaborations, and hackathon teams.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="mailto:aruvibalamurugan@gmail.com" class="contact-link">
+          <span class="contact-icon">✉️</span> aruvibalamurugan@gmail.com
+        </a>
+        <a href="tel:9363376947" class="contact-link">
+          <span class="contact-icon">📞</span> +91 93633 76947
+        </a>
+        <a href="mailto:aruvib.21auto@kongu.edu" class="contact-link">
+          <span class="contact-icon">🎓</span> aruvib.21auto@kongu.edu
+        </a>
+      </div>
+      <div>
+        <div style="color:var(--slate);font-size:0.85rem;font-weight:600;margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase;">Find Me Online</div>
+        <div class="socials">
+          <a href="https://linkedin.com/in/aruvib" target="_blank" class="social-btn">💼 LinkedIn</a>
+          <a href="https://github.com/Aruvi-B" target="_blank" class="social-btn">🐙 GitHub</a>
+          <a href="https://autonomousinai.blogspot.com/2024/08/aruviautonomous.blog.html" target="_blank" class="social-btn">✍️ Blog</a>
+          <a href="https://www.kaggle.com/aruvib" target="_blank" class="social-btn">📊 Kaggle</a>
+          <a href="https://www.facebook.com/aruvi.fb/" target="_blank" class="social-btn">📘 Facebook</a>
+          <a href="https://www.instagram.com/__aruvi__4/" target="_blank" class="social-btn">📸 Instagram</a>
+        </div>
+        <div style="margin-top:1.5rem">
+          <a href="https://drive.google.com/file/d/19ny6vvudZyDt9fisJZpcI8LTEvWEOc7W/view?usp=sharing" target="_blank" class="btn-primary" style="display:inline-flex">Download Resume ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & rebuilt for clarity · Aruvi B · SDV Engineer · 2025</p>
 </footer>
+
+<script>
+  // Tag cycling animation
+  const tags = [
+    'Research Enginner SDV - CoE'
+  ];
+  let tagIndex = 0;
+  const tagEl = document.getElementById('tagCycle');
+  // setInterval(() => {
+  //   tagEl.style.opacity = '0';
+  //   tagEl.style.transform = 'translateY(-8px)';
+  //   // tagEl.style.transition = 'opacity 0.3s, transform 0.3s';
+  //   setTimeout(() => {
+  //     tagIndex = (tagIndex + 1) % tags.length;
+  //     tagEl.textContent = tags[tagIndex];
+  //     tagEl.style.opacity = '1';
+  //     tagEl.style.transform = 'translateY(0)';
+  //   }, 3);
+  // }, 2400);
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.skill-card, .project-card, .award-item, .timeline-card, .edu-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
-
-
-
